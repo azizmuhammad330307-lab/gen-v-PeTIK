@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Informasi Seputar PeTIK Jombang</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Lora:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --night: #03171d;
+            --deep: #06242c;
+            --panel: #082f39;
+            --gold: #c8a45d;
+            --gold-light: #ecd49a;
+            --gold-dark: #8f6f2c;
+            --gold-line: rgba(200, 164, 93, .45);
+            --ivory: #faf6ec;
+            --ink: #12262c;
+            --soft: #b7cdd1;
+            --display: 'Cormorant Garamond', Garamond, 'Times New Roman', serif;
+            --body: 'Lora', Georgia, 'Times New Roman', serif;
+        }
+        * { box-sizing: border-box; }
+
+        body {
+            margin: 0;
+            padding: 56px 24px;
+            background: radial-gradient(ellipse at top, #0a3a46 0%, var(--night) 65%) fixed;
+            font-family: var(--body);
+            color: var(--ink);
+        }
+
+        /* Bingkai emas ganda */
+        .container {
+            display: flex;
+            flex-direction: column;
+            max-width: 1240px;
+            margin: 0 auto;
+            background: var(--deep);
+            border: 1px solid var(--gold);
+            box-shadow: 0 0 0 10px var(--night), 0 0 0 11px var(--gold-line), 0 40px 90px rgba(0, 0, 0, .6);
+            animation: masuk .9s ease-out both;
+        }
+        @keyframes masuk { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+
+        /* ===== Header ===== */
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 24px;
+            padding: 30px 60px;
+            background-color: var(--deep);
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='56' viewBox='0 0 56 56'%3E%3Cg fill='none' stroke='%23c8a45d' stroke-opacity='.16' stroke-width='1'%3E%3Crect x='9' y='9' width='38' height='38'/%3E%3Cpolygon points='28,0 56,28 28,56 0,28'/%3E%3C/g%3E%3C/svg%3E");
+            border-bottom: 1px solid var(--gold);
+        }
+        .logo { display: block; width: 108px; height: auto; }
+        .nav { display: flex; gap: 40px; }
+        .nav a {
+            position: relative;
+            padding: 6px 0;
+            color: var(--gold-light);
+            font-family: var(--display);
+            font-size: 24px;
+            font-weight: 600;
+            letter-spacing: .02em;
+            text-decoration: none;
+            transition: color .25s;
+        }
+        .nav a::after {
+            content: "";
+            position: absolute;
+            left: 0; right: 0; bottom: 0;
+            height: 1px;
+            background: var(--gold);
+            transform: scaleX(0);
+            transition: transform .3s;
+        }
+        .nav a:hover { color: #fff; }
+        .nav a:hover::after { transform: scaleX(1); }
+        a:focus-visible { outline: 2px solid var(--gold-light); outline-offset: 4px; }
+
+        /* ===== Main ===== */
+        .Main { display: flex; flex-direction: row; flex-grow: 1; }
+
+        /* Kiri: kartu jurusan */
+        .contact {
+            flex: 0 0 290px;
+            order: 1;
+            padding: 44px 30px;
+            background: var(--panel);
+            border-right: 1px solid var(--gold-line);
+        }
+        .card {
+            position: relative;
+            padding: 34px 24px 28px;
+            background: var(--deep);
+            border: 1px solid var(--gold);
+            text-align: center;
+        }
+        .card::before {
+            content: "";
+            position: absolute;
+            inset: 6px;
+            border: 1px solid var(--gold-line);
+            pointer-events: none;
+        }
+        .card h3 {
+            margin: 0 0 8px;
+            color: #fff;
+            font-family: var(--display);
+            font-size: 31px;
+            font-weight: 700;
+            line-height: 1.1;
+        }
+        .card .sub {
+            margin: 0 0 24px;
+            color: var(--gold-light);
+            font-family: var(--display);
+            font-size: 19px;
+            font-style: italic;
+        }
+        .major {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: 16px 0;
+            border-top: 1px solid var(--gold-line);
+            text-align: left;
+        }
+        .badge {
+            flex: none;
+            display: grid;
+            place-items: center;
+            width: 56px;
+            height: 56px;
+            border: 1px solid var(--gold);
+            border-radius: 50%;
+            color: var(--gold-light);
+            font-family: var(--display);
+            font-size: 21px;
+            font-weight: 700;
+        }
+        .major span { color: var(--soft); font-size: 15px; line-height: 1.4; }
+        .btn {
+            display: block;
+            margin-top: 12px;
+            padding: 14px 16px;
+            background: linear-gradient(135deg, var(--gold-light), var(--gold) 55%, var(--gold-dark));
+            color: var(--night);
+            font-family: var(--display);
+            font-size: 21px;
+            font-weight: 700;
+            letter-spacing: .03em;
+            text-decoration: none;
+            transition: filter .25s, transform .25s;
+        }
+        .btn:hover { filter: brightness(1.12); transform: translateY(-2px); }
+
+        /* Tengah: artikel di atas kertas gading */
+        .Article {
+            flex: 1 1 auto;
+            order: 2;
+            min-width: 0;
+            padding: 56px 60px 64px;
+            background: var(--ivory);
+            text-align: left;
+        }
+        .Article h2 {
+            margin: 0;
+            color: var(--ink);
+            font-family: var(--display);
+            font-size: clamp(34px, 4.4vw, 54px);
+            font-weight: 700;
+            line-height: 1.05;
+            text-align: center;
+        }
+        .ornament {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin: 24px auto 36px;
+            max-width: 360px;
+        }
+        .ornament::before, .ornament::after {
+            content: "";
+            flex: 1;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--gold-dark));
+        }
+        .ornament::after { transform: scaleX(-1); }
+        .ornament svg { width: 22px; height: 22px; flex: none; }
+
+        .Article p {
+            margin: 0 0 22px;
+            font-size: 17.5px;
+            line-height: 1.8;
+            hyphens: auto;
+        }
+        .Article p.lead {
+            font-size: 20px;
+            font-weight: 500;
+            line-height: 1.7;
+        }
+        .Article p.lead::first-letter {
+            float: left;
+            padding: 8px 12px 0 0;
+            color: var(--gold-dark);
+            font-family: var(--display);
+            font-size: 4.6em;
+            font-weight: 700;
+            line-height: .78;
+        }
+
+        /* Kanan: menu */
+        .news {
+            flex: 0 0 230px;
+            order: 3;
+            padding: 44px 28px;
+            background: var(--panel);
+            border-left: 1px solid var(--gold-line);
+        }
+        .menu { display: flex; flex-direction: column; }
+        .menu a {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 18px 0;
+            border-bottom: 1px solid var(--gold-line);
+            color: var(--soft);
+            font-family: var(--display);
+            font-size: 24px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: color .25s, padding-left .25s;
+        }
+        .menu a:first-child { border-top: 1px solid var(--gold-line); }
+        .menu a::before {
+            content: "";
+            width: 8px; height: 8px;
+            flex: none;
+            background: var(--gold);
+            transform: rotate(45deg) scale(0);
+            transition: transform .25s;
+        }
+        .menu a:hover { color: #fff; padding-left: 6px; }
+        .menu a:hover::before, .menu a.active::before { transform: rotate(45deg) scale(1); }
+        .menu a.active { color: var(--gold-light); }
+
+        /* ===== Footer ===== */
+        .footer {
+            padding: 26px 24px;
+            background: var(--night);
+            border-top: 1px solid var(--gold);
+            color: var(--gold-light);
+            font-family: var(--display);
+            font-size: 19px;
+            letter-spacing: .03em;
+            text-align: center;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .container { animation: none; }
+            * { transition: none !important; }
+        }
+
+        /* ===== Responsive ===== */
+        @media (max-width: 1000px) {
+            .header { padding: 26px 32px; }
+            .nav { gap: 26px; }
+            .contact { flex-basis: 240px; padding: 32px 20px; }
+            .news { flex-basis: 190px; padding: 32px 20px; }
+            .Article { padding: 44px 34px 52px; }
+        }
+        @media (max-width: 760px) {
+            body { padding: 14px; }
+            .container { box-shadow: 0 0 0 5px var(--night), 0 0 0 6px var(--gold-line); }
+            .header { flex-direction: column; padding: 24px 16px; gap: 14px; }
+            .nav { flex-wrap: wrap; justify-content: center; gap: 22px; }
+            .nav a { font-size: 21px; }
+            .Main { flex-direction: column; }
+            .news { order: 1; flex: none; padding: 8px 20px; border: 0; border-bottom: 1px solid var(--gold-line); }
+            .menu a { font-size: 21px; padding: 14px 0; }
+            .Article { order: 2; padding: 36px 22px 44px; }
+            .Article p { font-size: 16.5px; }
+            .Article p.lead { font-size: 18px; }
+            .contact { order: 3; flex: none; padding: 28px 20px; border: 0; border-top: 1px solid var(--gold-line); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        <header class="header">
+            <svg class="logo" viewBox="0 0 100 62" role="img" aria-label="PeTIK Jombang">
+                <defs>
+                    <linearGradient id="emas" x1="0" y1="0" x2="1" y2="1">
+                        <stop offset="0" stop-color="#f3dfaa"/>
+                        <stop offset=".55" stop-color="#c8a45d"/>
+                        <stop offset="1" stop-color="#8f6f2c"/>
+                    </linearGradient>
+                </defs>
+                <path d="M18 24 C18 8 38 8 50 24 C62 40 82 40 82 24 C82 8 62 8 50 24 C38 40 18 40 18 24 Z"
+                      fill="none" stroke="url(#emas)" stroke-width="7" stroke-linejoin="round"/>
+                <text x="50" y="58" text-anchor="middle" fill="#ecd49a"
+                      font-family="Georgia, serif" font-size="9">PeTIK Jombang</text>
+            </svg>
+            <nav class="nav">
+                <a href="#">About</a>
+                <a href="#">Blog</a>
+                <a href="#">Shop</a>
+                <a href="#">Contact</a>
+            </nav>
+        </header>
+
+        <div class="Main">
+            <aside class="contact">
+                <div class="card">
+                    <h3>Pilih Jurusanmu</h3>
+                    <p class="sub">Pendidikan TIK selama 1 (satu) tahun</p>
+                    <div class="major">
+                        <div class="badge">PPL</div>
+                        <span>Pengembangan Perangkat Lunak</span>
+                    </div>
+                    <div class="major">
+                        <div class="badge">DM</div>
+                        <span>Digital Marketing</span>
+                    </div>
+                    <a class="btn" href="#">Pendaftaran</a>
+                </div>
+            </aside>
+
+            <main class="Article">
+                <h2>Informasi Seputar PeTIK Jombang</h2>
+                <div class="ornament" aria-hidden="true">
+                    <svg viewBox="0 0 24 24"><g fill="none" stroke="#8f6f2c" stroke-width="1.4"><rect x="5" y="5" width="14" height="14"/><rect x="5" y="5" width="14" height="14" transform="rotate(45 12 12)"/></g></svg>
+                </div>
+                <p class="lead">PeTIK Jombang merupakan lembaga pendidikan vokasi Teknologi Informasi dan Komunikasi dengan dukungan pembelajaran bidang kepesantrenan (Kajian Kitab Kuning) dari ulama-ulama yang memiliki sanad keilmuan yang jelas.</p>
+                <p>PeTIK Jombang yang merupakan lembaga pendidikan di bawah naungan Yayasan Baitul Maal (YBM) PLN, berkomitmen melanjutkan visi dan misi untuk menebarkan manfaat kepada umat seluas-luasnya. Hal ini diwujudkan dengan memberikan kemanfaatan kepada anak-anak dhuafa untuk mengenyam pendidikan teknologi informasi dan komunikasi selama 1 (satu) tahun. Jurusan pendidikan teknologi informasi dan komunikasi bagi mahasantri dibagi menjadi 2 (dua) jurusan yaitu : Pengembangan Perangkat Lunak (PPL) dan Digital Marketing (DM).</p>
+                <p>Pada jurusan PPL, mahasantri diajarkan bagaimana membuat website, aplikasi berbasis web, aplikasi mobile, merancang UI/UX, merancang database, dan lain-lain. Jurusan DM, mahasantri diajarkan bagaimana menggunakan tool marketing online melalui internet, memasang iklan melalui Instagram, Facebook, TikTok guna meningkatkan penjualan produk. Selain itu juga diajarkan SEO (Search Engine Optimization). Di bidang kepesantrenan, mahasantri diajarkan Kitab Hadits Arbain, Kitab Kuning Taklim Mutaalim, Tauhid (Aqidatul Awam), Fiqih (Safinatunnajah, Fathul Qorib), Tasawuf (Sulam Taufiq, Bidayatul Hidayah), Tafsir (Al Ibris), Nahwu (Jurumiyah).</p>
+            </main>
+
+            <aside class="news">
+                <nav class="menu">
+                    <a class="active" href="#">Beranda</a>
+                    <a href="#">Article</a>
+                    <a href="#">Pendaftaran</a>
+                    <a href="#">Galery</a>
+                </nav>
+            </aside>
+        </div>
+
+        <footer class="footer">
+            Copyright &copy; 2023 Programming PeTIK. All Rights Reserved
+        </footer>
+    </div>
+</body>
+</html>
