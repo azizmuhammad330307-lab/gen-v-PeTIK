@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tugas Web Design</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            overflow-x: hidden;
+        }
+
+        .move-ball {
+            width: 130px;
+            height: 130px;
+            background: linear-gradient(135deg, #00ffff, #0099ff, #7b2cbf, #ff4d6d, #00f5d4);
+            background-size: 300% 300%;
+            border-radius: 50%;
+            position: relative;
+            animation: 
+                move 3s infinite alternate ease-in-out,
+                smoothColor 6s infinite linear;
+        }
+
+        @keyframes move {
+            0% {
+                left: calc(100% - 130px);
+            }
+            100% {
+                left: 0;
+            }
+        }
+
+        @keyframes smoothColor {
+            0% {
+                background-position: 0% 50%;
+                filter: hue-rotate(0deg);
+            }
+            50% {
+                background-position: 100% 50%;
+                filter: hue-rotate(180deg);
+            }
+            100% {
+                background-position: 0% 50%;
+                filter: hue-rotate(360deg);
+            }
+        }
+
+        .marquee {
+            width: 100%;
+            overflow: hidden;
+            white-space: nowrap;
+            box-sizing: border-box;
+            background-color: #76f7c4;
+            padding: 15px 0;
+        }
+
+        .marquee h1 {
+            display: inline-block;
+            margin: 0;
+            padding-left: 100%;
+            animation: marquee 10s linear infinite;
+            color: red;
+            font-size: 36px;
+        }
+
+        @keyframes marquee {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="move-ball"></div>
+    <div class="marquee">
+        <h1>Ini Dia Tugas Buatan Saya, No AI</h1>
+    </div>
+</body>
+</html>
