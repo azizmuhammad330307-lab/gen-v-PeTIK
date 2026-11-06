@@ -1,0 +1,351 @@
+<title>Muhammad Aziz CV</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Curriculum vitae of Muhammad Aziz, independent software developer and creator of Athana Melody.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&family=Source+Sans+3:wght@400;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  /* Layout: a two-column sheet (facts on the left, story on the right) under a header with a
+     spec strip that reads like the signal-path panel of a music player. One column on a phone. */
+  :root {
+    --bg: #eef0f6;
+    --sheet: #ffffff;
+    --ink: #15132b;
+    --ink-2: #4a4863;
+    --ink-3: #75738e;
+    --line: #dcdce9;
+    --accent: #0b8a68;
+    --accent-ink: #ffffff;
+    --accent-soft: #dff5ee;
+    --violet: #5f45cf;
+    --band: #15132b;
+    --band-ink: #f2f1fb;
+    --band-dim: #a9a7c6;
+    --band-accent: #46e6b0;
+    --hole: #fff4cf;
+    --hole-ink: #6b5200;
+    --hole-line: #e6c565;
+    --f-display: "Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+    --f-body: "Source Sans 3", "Segoe UI", system-ui, sans-serif;
+    --f-mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #0b0a18;
+      --sheet: #14122a;
+      --ink: #efeefa;
+      --ink-2: #b9b7d3;
+      --ink-3: #8c8aa9;
+      --line: #2a2849;
+      --accent: #46e6b0;
+      --accent-ink: #0b0a18;
+      --accent-soft: #123a35;
+      --violet: #a98fff;
+      --band: #0e0c20;
+      --band-ink: #f2f1fb;
+      --band-dim: #9d9bbd;
+      --band-accent: #46e6b0;
+      --hole: #3a3010;
+      --hole-ink: #f3dc8c;
+      --hole-line: #7a6522;
+      color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #0b0a18;
+    --sheet: #14122a;
+    --ink: #efeefa;
+    --ink-2: #b9b7d3;
+    --ink-3: #8c8aa9;
+    --line: #2a2849;
+    --accent: #46e6b0;
+    --accent-ink: #0b0a18;
+    --accent-soft: #123a35;
+    --violet: #a98fff;
+    --band: #0e0c20;
+    --band-ink: #f2f1fb;
+    --band-dim: #9d9bbd;
+    --band-accent: #46e6b0;
+    --hole: #3a3010;
+    --hole-ink: #f3dc8c;
+    --hole-line: #7a6522;
+    color-scheme: dark;
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--f-body);
+    font-size: 16px;
+    line-height: 1.55;
+    padding-block: 28px 48px;
+    padding-left: max(16px, env(safe-area-inset-left, 0px));
+    padding-right: max(16px, env(safe-area-inset-right, 0px));
+  }
+  a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+  a:hover { text-decoration-thickness: 2px; }
+  a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
+  h1, h2, h3, p, ul, dl, dd { margin: 0; }
+  ul { padding: 0; list-style: none; }
+
+  .sheet {
+    max-width: 1020px;
+    margin-inline: auto;
+    background: var(--sheet);
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    overflow: hidden;
+  }
+
+  /* ---------- Header ---------- */
+  .head {
+    background: var(--band);
+    color: var(--band-ink);
+    padding: 40px clamp(20px, 5vw, 48px) 0;
+  }
+  .kicker {
+    font: 500 12px/1 var(--f-mono);
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--band-accent);
+  }
+  .head h1 {
+    font: 700 clamp(38px, 7.4vw, 68px)/1 var(--f-display);
+    letter-spacing: -.02em;
+    margin-top: 14px;
+    text-wrap: balance;
+  }
+  .role {
+    margin-top: 12px;
+    font-size: clamp(17px, 2.4vw, 20px);
+    color: var(--band-dim);
+    max-width: 52ch;
+    text-wrap: pretty;
+  }
+  .role b { color: var(--band-ink); font-weight: 600; }
+
+  .spec {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    margin-top: 34px;
+    border-top: 1px solid rgb(255 255 255 / .14);
+  }
+  .spec div { padding: 14px 14px 16px 0; min-width: 0; }
+  .spec div + div { padding-left: 16px; border-left: 1px solid rgb(255 255 255 / .1); }
+  .spec dt { font: 400 11px/1.2 var(--f-mono); letter-spacing: .1em; text-transform: uppercase; color: var(--band-dim); }
+  .spec dd { margin-top: 6px; font: 500 15px/1.25 var(--f-mono); color: var(--band-ink); font-variant-numeric: tabular-nums; overflow-wrap: anywhere; }
+
+  /* ---------- Body ---------- */
+  .body {
+    display: grid;
+    grid-template-columns: 290px minmax(0, 1fr);
+    grid-template-areas: "side main";
+  }
+  .main { grid-area: main; padding: 34px clamp(20px, 4.5vw, 44px) 40px; display: grid; gap: 36px; align-content: start; min-width: 0; }
+  .side { grid-area: side; padding: 34px 24px 40px clamp(20px, 4vw, 36px); border-right: 1px solid var(--line); display: grid; gap: 30px; align-content: start; min-width: 0; }
+
+  .label {
+    font: 500 12px/1 var(--f-mono);
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--ink-3);
+    display: flex; align-items: center; gap: 12px;
+    margin-bottom: 14px;
+  }
+  .label::after { content: ""; flex: 1; height: 1px; background: var(--line); }
+
+  .lead { font-size: 18px; line-height: 1.6; max-width: 62ch; text-wrap: pretty; }
+
+  /* Project */
+  .proj-head { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 6px 16px; }
+  .proj-head h3 { font: 700 26px/1.15 var(--f-display); letter-spacing: -.01em; }
+  .proj-head .when { font: 400 13px/1 var(--f-mono); color: var(--ink-3); }
+  .proj-meta { margin-top: 8px; color: var(--ink-2); font-size: 15px; }
+  .proj-meta .sep { color: var(--line); margin-inline: 6px; }
+  .proj-about { margin-top: 14px; max-width: 64ch; color: var(--ink); text-wrap: pretty; }
+
+  .groups { margin-top: 22px; display: grid; gap: 22px; }
+  .group { display: grid; grid-template-columns: 148px minmax(0, 1fr); gap: 4px 20px; }
+  .group h4 { margin: 0; font: 600 13px/1.4 var(--f-mono); color: var(--accent); letter-spacing: .02em; padding-top: 3px; }
+  .group ul { display: grid; gap: 9px; }
+  .group li { position: relative; padding-left: 16px; text-wrap: pretty; }
+  .group li::before { content: ""; position: absolute; left: 0; top: .72em; width: 7px; height: 2px; background: var(--ink-3); }
+
+  /* Strengths */
+  .strengths { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px 32px; }
+  .strengths h3 { font: 700 17px/1.25 var(--f-display); }
+  .strengths p { margin-top: 4px; color: var(--ink-2); font-size: 15.5px; text-wrap: pretty; }
+
+  /* Sidebar */
+  .contact li, .plain li { padding: 7px 0; border-bottom: 1px solid var(--line); font-size: 15px; overflow-wrap: anywhere; }
+  .contact li:last-child, .plain li:last-child { border-bottom: 0; }
+  .contact small { display: block; font: 400 11px/1.2 var(--f-mono); letter-spacing: .1em; text-transform: uppercase; color: var(--ink-3); margin-bottom: 3px; }
+
+  .skill { display: grid; gap: 14px; }
+  .skill dt { font: 600 13px/1.3 var(--f-mono); color: var(--ink); }
+  .skill dd { margin-top: 3px; font-size: 14.5px; color: var(--ink-2); line-height: 1.5; }
+
+  /* Fill-in markers: bracketed text that is meant to be replaced */
+  .fill {
+    background: var(--hole);
+    color: var(--hole-ink);
+    border: 1px dashed var(--hole-line);
+    border-radius: 3px;
+    padding: 0 5px;
+    font-size: .94em;
+  }
+
+  .foot {
+    border-top: 1px solid var(--line);
+    padding: 14px clamp(20px, 4vw, 36px);
+    display: flex; flex-wrap: wrap; justify-content: space-between; gap: 6px 20px;
+    font: 400 12px/1.5 var(--f-mono);
+    color: var(--ink-3);
+  }
+
+  @media (max-width: 860px) {
+    .spec { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .spec div:nth-child(4) { padding-left: 0; border-left: 0; }
+    .spec div:nth-child(n+4) { border-top: 1px solid rgb(255 255 255 / .1); }
+    .body { grid-template-columns: minmax(0, 1fr); grid-template-areas: "main" "side"; }
+    .side { border-right: 0; border-top: 1px solid var(--line); padding-right: clamp(20px, 4vw, 36px); }
+  }
+  @media (max-width: 640px) {
+    .group { grid-template-columns: minmax(0, 1fr); }
+    .strengths { grid-template-columns: minmax(0, 1fr); }
+  }
+  @media (max-width: 520px) {
+    .spec { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .spec div:nth-child(n) { padding-left: 14px; border-left: 1px solid rgb(255 255 255 / .1); border-top: 0; }
+    .spec div:nth-child(odd) { padding-left: 0; border-left: 0; }
+    .spec div:nth-child(n+3) { border-top: 1px solid rgb(255 255 255 / .1); }
+  }
+  @media print {
+    body { background: #fff; padding: 0; }
+    .sheet { border: 0; border-radius: 0; max-width: none; }
+    .head, .spec, .fill { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    a { color: inherit; }
+  }
+</style>
+
+<main class="sheet">
+  <header class="head">
+    <p class="kicker">Curriculum vitae</p>
+    <h1>Muhammad Aziz</h1>
+    <p class="role"><b>Independent software developer.</b> I build and ship whole products on my own, from the interface to the audio engine to the release page.</p>
+    <dl class="spec" aria-label="Athana Melody at a glance">
+      <div><dt>Formats</dt><dd>8 audio types</dd></div>
+      <div><dt>Equalizer</dt><dd>10 bands</dd></div>
+      <div><dt>Lyric translation</dt><dd>18 languages</dd></div>
+      <div><dt>Web releases</dt><dd>37 versions</dd></div>
+      <div><dt>Ads / tracking</dt><dd>none / none</dd></div>
+    </dl>
+  </header>
+
+  <div class="body">
+    <div class="main">
+      <section>
+        <h2 class="label">Profile</h2>
+        <p class="lead">I design, build and publish complete software. My main project, Athana Melody, is a free music player for the web and for Android, with its own audio engine, online lookups for covers and lyrics, and support for Google Drive and WebDAV servers. I take a product from idea to a public release: interface, audio processing, storage, security, documentation and updates. I care about privacy and plain wording, and I want software to feel the same for a first-time listener and a power user.</p>
+      </section>
+
+      <section>
+        <h2 class="label">Featured project</h2>
+        <div class="proj-head">
+          <h3>Athana Melody</h3>
+          <span class="when">2026</span>
+        </div>
+        <p class="proj-meta">Founder, designer and sole developer<span class="sep">/</span>Web app (PWA) and native Android app<span class="sep">/</span>Free and ad-free<span class="sep">/</span><a href="https://github.com/Kanatahiroshi25/Athana-Release">Source and releases on GitHub</a></p>
+        <p class="proj-about">A music player for every kind of song file: MP3, AAC, M4A, OGG, Opus, FLAC, WAV and AIFF. Lossless files reach the audio output untouched. Published on GitHub as Kanata Hiroshi.</p>
+
+        <div class="groups">
+          <div class="group">
+            <h4>Playback engine</h4>
+            <ul>
+              <li>Built the Android app in Flutter and Kotlin with a background playback service, lock-screen controls, and its own decoder and audio output with bit-perfect and 24-bit float modes.</li>
+              <li>Wrote the web version as an installable offline app with a service worker, reading covers, tags and embedded lyrics from the user's own files.</li>
+            </ul>
+          </div>
+          <div class="group">
+            <h4>Audio tools</h4>
+            <ul>
+              <li>Added a 10-band equalizer, loudness measurement (LUFS), spectrogram, true bit-depth and hi-res checks, dynamic range and clipping detection, volume normalisation, A-B loop and fades.</li>
+            </ul>
+          </div>
+          <div class="group">
+            <h4>Connections</h4>
+            <ul>
+              <li>Added WebDAV for home servers and NAS drives with HTTP Basic authentication. Server passwords are encrypted with the Android Keystore (AES-GCM), so backups cannot read them.</li>
+              <li>Added streaming from Google Drive without filling the phone's storage.</li>
+              <li>Matched songs with MusicBrainz and the Cover Art Archive, handling romanized titles, artist aliases and joined artist credits, within each service's rate limit. Added synced lyrics, romaji and translation into 18 languages.</li>
+            </ul>
+          </div>
+          <div class="group">
+            <h4>Privacy and delivery</h4>
+            <ul>
+              <li>Made privacy a feature: no account, no tracking, an Offline mode, a switch for every online service, local backup and restore, and a one-tap erase.</li>
+              <li>Built an in-app updater that checks GitHub Releases, downloads the APK with a progress bar and hands it to Android's installer.</li>
+              <li>Ran the whole release: README and changelog writing, GitHub Pages hosting, a first-launch welcome, and a rare Ko-fi support prompt that can be switched off for good.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2 class="label">Strengths</h2>
+        <div class="strengths">
+          <div><h3>Ownership</h3><p>I handle design, code, testing feedback, release and documentation, and keep a project going through many versions.</p></div>
+          <div><h3>Working with AI tools</h3><p>I build with Claude as a pair programmer, set the direction, review the results and test every change on real devices and servers.</p></div>
+          <div><h3>Debugging with evidence</h3><p>I trace problems from logs, server output and screenshots, change one variable at a time and confirm each fix before moving on.</p></div>
+          <div><h3>Honest scope</h3><p>I follow service terms, avoid unofficial scraping and say plainly what a feature does and does not do.</p></div>
+        </div>
+      </section>
+    </div>
+
+    <aside class="side">
+      <section>
+        <h2 class="label">Contact</h2>
+        <ul class="contact">
+          <li><small>Email</small><span class="fill">[your email]</span></li>
+          <li><small>Location</small><span class="fill">[City, Country]</span></li>
+          <li><small>GitHub</small><a href="https://github.com/Kanatahiroshi25">github.com/Kanatahiroshi25</a></li>
+          <li><small>Releases</small><a href="https://github.com/Kanatahiroshi25/Athana-Release/releases/latest">Athana Melody downloads</a></li>
+          <li><small>Ko-fi</small><a href="https://ko-fi.com/athanadevid">ko-fi.com/athanadevid</a></li>
+        </ul>
+      </section>
+
+      <section>
+        <h2 class="label">Skills</h2>
+        <dl class="skill">
+          <div><dt>Mobile</dt><dd>Flutter, Dart, Kotlin, Android Media3, MediaSession, foreground services, Android Keystore</dd></div>
+          <div><dt>Web</dt><dd>HTML, CSS, JavaScript, PWAs, service workers, Web Audio API, Tailwind CSS</dd></div>
+          <div><dt>Audio</dt><dd>Lossless and lossy formats, sample rate and bit depth, equalizers, loudness (LUFS), spectrograms, bit-perfect output</dd></div>
+          <div><dt>Networking</dt><dd>REST APIs, WebDAV (PROPFIND), HTTP Basic auth, Google Drive, MusicBrainz, LRCLIB, rate limiting</dd></div>
+          <div><dt>Security</dt><dd>Encrypted credential storage (AES-GCM), local-only data, opt-in online services</dd></div>
+          <div><dt>Delivery</dt><dd>Git and GitHub, GitHub Pages and Releases, APK packaging, in-app updates, technical writing</dd></div>
+        </dl>
+      </section>
+
+      <section>
+        <h2 class="label">Education</h2>
+        <ul class="plain">
+          <li><span class="fill">[Degree or course, school, years]</span></li>
+        </ul>
+      </section>
+
+      <section>
+        <h2 class="label">Languages</h2>
+        <ul class="plain">
+          <li><span class="fill">[Language and level]</span></li>
+          <li><span class="fill">[Language and level]</span></li>
+        </ul>
+      </section>
+    </aside>
+  </div>
+
+  <footer class="foot">
+    <span>Muhammad Aziz</span>
+    <span>Highlighted fields are placeholders to replace</span>
+  </footer>
+</main>
