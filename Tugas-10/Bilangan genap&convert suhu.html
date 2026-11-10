@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Latihan JavaScript Internal</title>
+</head>
+<body>
+
+  <h3>1. Bilangan Genap dari 1 sampai 10</h3>
+  <p id="hasil-genap"></p>
+
+  <h3>2. Konversi Suhu Celsius ke Fahrenheit</h3>
+  <input type="number" id="input-celsius" placeholder="Masukkan suhu (°C)">
+  <button onclick="konversiSuhu()">Konversi</button>
+  <p id="hasil-suhu"></p>
+
+  <script>
+    let deretGenap = "";
+    for (let i = 1; i <= 10; i++) {
+      if (i % 2 === 0) {
+        deretGenap += i + " ";
+      }
+    }
+    document.getElementById("hasil-genap").textContent = deretGenap;
+
+    function konversiSuhu() {
+      let nilaiInput = document.getElementById("input-celsius").value;
+
+      
+      if (nilaiInput === "") {
+        document.getElementById("hasil-suhu").textContent = "Masukkan angka suhu terlebih dahulu!";
+        return;
+      }
+
+      let celsius = parseFloat(nilaiInput);
+      let fahrenheit = (celsius * 9 / 5) + 32;
+
+      document.getElementById("hasil-suhu").textContent = celsius + "°C = " + fahrenheit + "°F";
+    }
+  </script>
+
+</body>
+</html>
