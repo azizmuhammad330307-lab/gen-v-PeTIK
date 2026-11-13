@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tugas Perulangan JavaScript</title>
+</head>
+<body>
+    <h2>Tugas JavaScript: For dan While Loop</h2>
+    <p>Buka <strong>Console</strong> di browser (tekan <strong>F12</strong> lalu pilih tab <strong>Console</strong>) untuk melihat hasil eksekusi kode.</p>
+
+    <script>
+        // 1. Mencetak Deret Angka Berurutan (For..Loop)
+        // Instruksi 1: Menampilkan angka 1 sampai 10 di console
+        for (let i = 1; i <= 10; i++) {
+            console.log(i);
+        }
+
+        // Instruksi 2: Hitungan mundur 5 sampai 1, lalu cetak "Mulai!"
+        for (let i = 5; i >= 1; i--) {
+            console.log(i);
+        }
+        console.log("Mulai!");
+
+        // 2. Menghitung Total Akumulasi Angka (While..Loop)
+        // Instruksi 1: Deklarasi variabel
+        let angka = 1;
+        let total = 0;
+
+        // Instruksi 2: Perulangan while selama angka kurang dari atau sama dengan 5
+        while (angka <= 5) {
+            total += angka;
+            angka++;
+        }
+
+        // Instruksi 3: Cetak hasil akhir variabel total di luar blok perulangan
+        console.log(total);
+    </script>
+</body>
+</html>
